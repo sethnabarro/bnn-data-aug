@@ -1,0 +1,11 @@
+torch==1.7.1
+torchvision==0.8.2
+h5py==3.7.0
+sacred>=0.8<0.9
+gpytorch>=1.0<1.2
+pyro-ppl==1.5.2
+numpy==1.18.5
+scipy==1.6.1
+tqdm>=4.0<5.0
+matplotlib>=3.0<4.0
+pandas>=1.2<1.3
