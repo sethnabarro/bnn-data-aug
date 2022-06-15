@@ -1,17 +1,18 @@
-## Bayesian Data Augmentation
+# Data Augmentation in Bayesian Neural Networks
 
-Codebase for the BNN experiments in [_Data augmentation in Bayesian neural networks and the cold posterior effect_](https://openreview.net/pdf?id=rZEM7ULs5x5). Our code is adapted from the `bnn_priors` library ([paper](https://www.sciencedirect.com/science/article/pii/S2665963821000270), [github](https://github.com/ratschlab/bnn_priors)), though significant parts of the library not relevant to our paper have been removed. See the `bnn_priors` github for the original version
+Codebase for the BNN experiments in [_Data augmentation in Bayesian neural networks and the cold posterior effect_](https://openreview.net/pdf?id=rZEM7ULs5x5). The code is adapted from the `bnn_priors` library ([paper](https://www.sciencedirect.com/science/article/pii/S2665963821000270), [github](https://github.com/ratschlab/bnn_priors)), though significant parts of the library not relevant to our paper have been removed. See the `bnn_priors` github for the original version.
 
-All the experiments needed to reproduce Figure 4 can be run using the `run_mnist.sh` and `run_cifar10.sh`  scripts in this directory. These will run both the MCMC and the evaluation of the resulting samples. Make sure the `repo_dir` variable is set to the absolute path to the `bnn_data_aug/` directory, and `python_exec` points to a python executable in an environment with the necessary dependencies installed.
+All the experiments needed to reproduce Figure 4 of our paper can be run using the `run_mnist.sh` and `run_cifar10.sh`  scripts in this directory. These will run both the MCMC and the evaluation of the resulting samples. Make sure the `repo_dir` variable is set to the absolute path to the `bnn_data_aug/` directory, and `python_exec` points to a python executable in an environment with the necessary dependencies installed.
 
-#### Dependencies
+## Dependencies
+
 Use the `requirements.txt` in this directory.
 
-#### Outputs
+## Outputs
 
 The output, including model samples, diagnostics and evaluation results, will be written to the subdirectory `bnn_data_aug/results/<dataset_name>/<date>/<run_id>`. Where `run_id` is an automatically generated integer.
 
-#### Dataset Names
+## Experiment Configs
 
 The runs for Figure 4 require only the `data` and `extra_args` variables in `run_*.sh` to be altered. Different augmentation averaging schemes can be specified through the `data` variable. The configurations should be set as follows:
 
@@ -28,11 +29,10 @@ The runs for Figure 4 require only the `data` and `extra_args` variables in `run
 
 Where <dataset> is "cifar10" or "mnist" accordingly, and <aug_seed> is the seed for random augmentation samples. Other variables such as the architecture, learning rates etc are already set to the correct values in `run_mnist.sh` and `run_cifar10.sh`.
 
-
-#### SGD
+## SGD
 
 To run the configs with SGD rather than SGLD, set `priors=("improper")` and `temps=(0.0)` in `run_*.sh`.
 
-#### Time to Run
+## Time to Run
 
 On a NVIDIA RTX6000 GPU, the CIFAR10 experiments with no augmentation averaging take around 20 hours, those which average over eight samples per input take around 2 days. For MNIST, these runs take around 6 and 20 hours respectively.
