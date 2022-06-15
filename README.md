@@ -35,6 +35,17 @@ Where <dataset> is "cifar10" or "mnist" accordingly, and <aug_seed> is the seed 
 
 To run the configs with SGD rather than SGLD, set `priors=("improper")` and `temps=(0.0)` in `run_*.sh`.
 
-## Time to Run
+## Time to run
 
 On a NVIDIA RTX6000 GPU, the CIFAR10 experiments with no augmentation averaging take around 20 hours, those which average over eight samples per input take around 2 days. For MNIST, these runs take around 6 and 20 hours respectively.
+
+## How to cite
+
+```bibtex
+@article{nabarro2021data,
+  title={Data augmentation in Bayesian neural networks and the cold posterior effect},
+  author={Nabarro, Seth and Ganev, Stoil and Garriga-Alonso, Adri{\`a} and Fortuin, Vincent and van der Wilk, Mark and Aitchison, Laurence},
+  journal={arXiv preprint arXiv:2106.05586},
+  year={2021}}
+```
+
