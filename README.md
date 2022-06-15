@@ -10,11 +10,11 @@ Use the `requirements.txt`.
 
 ## Outputs
 
-The output, including model samples, diagnostics and evaluation results, will be written to the subdirectory `bnn-data-aug/results/<dataset_name>/<date>/<run_id>`. Where `run_id` is an automatically generated integer.
+The output, including model samples, diagnostics and evaluation results, will be written to the subdirectory `bnn-data-aug/results/<dataset_name>/<date>/<run_id>`, where `run_id` is automatically generated to avoid overwriting previous results.
 
 ## Experiment Configs
 
-The runs for Figure 4 require only the `data` and `extra_args` variables in `run_*.sh` to be altered. Different augmentation averaging schemes can be specified through the `data` variable. The configurations should be set as follows:
+The runs for Figure 4 require only the `data` and `extra_args` variables in `experiments/bayes_data_aug/run_*.sh` to be altered. Different augmentation averaging schemes can be specified through the `data` variable. The configurations should be set as follows:
 
 | Train Avg | Test Avg | Augmentation      | `data=`                               | `extra_args=`                | Linestyle in Fig. 4 |
 |-----------|----------|-------------------|---------------------------------------|------------------------------|---------------------|
